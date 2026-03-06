@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 type LeadStatus = 'New Lead' | 'Contacted' | 'Site Visit' | 'Bid Sent' | 'Follow Up' | 'Won' | 'Lost';
 type JobStatus = 'Scheduled' | 'In Progress' | 'Waiting' | 'Completed';
