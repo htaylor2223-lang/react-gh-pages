@@ -11,33 +11,32 @@ type Lead = {
 
 export default function App() {
 
-  const [leads, setLeads] = useState<Lead[]>([
+const [leads, setLeads] = useState(() => {
+  const saved = localStorage.getItem("leads");
+  return saved ? JSON.parse(saved) : [
     {
       name: "Donna Enders",
       project: "Deck + Awning",
-      city: "Philip, SD",
-      phone: "605-000-0000",
-      value: 18400,
-      followUp: "2026-03-08"
+      city: "Philip",
+      phone: "",
+      value: 18400
     },
     {
       name: "Kelly Kinsley",
       project: "Pole Barn Raise",
-      city: "Kadoka, SD",
-      phone: "605-000-0000",
-      value: 26800,
-      followUp: "2026-03-07"
+      city: "Kadoka",
+      phone: "",
+      value: 26800
     },
     {
       name: "Clara Jobgen",
       project: "Onyx Shower",
-      city: "Murdo, SD",
-      phone: "605-000-0000",
-      value: 9600,
-      followUp: "2026-03-09"
+      city: "Murdo",
+      phone: "",
+      value: 9600
     }
-  ]);
-
+  ];
+});
   const [form, setForm] = useState({
     name: "",
     project: "",
