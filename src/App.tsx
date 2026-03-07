@@ -1,14 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import { useState } from "react";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+export default function App() {
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  const [leads] = useState([
+    { name: "Donna Enders", project: "Deck + Awning", value: 18400 },
+    { name: "Kelly Kinsley", project: "Pole Barn Raise", value: 26800 },
+    { name: "Clara Jobgen", project: "Onyx Shower", value: 9600 }
+  ]);
+
+  return (
+    <div style={{ padding: 40, fontFamily: "Arial" }}>
+      <h1>Tailored Contracting CRM</h1>
+
+      <h2>Leads</h2>
+
+      {leads.map((lead, index) => (
+        <div key={index}>
+          {lead.name} – {lead.project} – ${lead.value}
+        </div>
+      ))}
+
+    </div>
+  );
+}
