@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function App() {
 
-  const [leads, setLeads] = useState([
+const [leads, setLeads] = useState<{name:string, project:string, value:number}[]>([
     { name: "Donna Enders", project: "Deck + Awning", value: 18400 },
     { name: "Kelly Kinsley", project: "Pole Barn Raise", value: 26800 },
     { name: "Clara Jobgen", project: "Onyx Shower", value: 9600 }
